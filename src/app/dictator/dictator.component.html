@@ -1,0 +1,24 @@
+<form [formGroup]="dictatorData" (ngSubmit)="CreateDictator()">
+  <label>First Name</label><br />
+  <input type="text" name="fName" formControlName="fName"> <br>
+  <label>Last Name</label><br />
+  <input type="text" name="lName" formControlName="lName"> <br>
+  <label>Gender: 0 for male, 1 for female</label><br />
+  <input type="text" name="gender" formControlName="gender"> <br>
+  <label>Year of Birth</label><br />
+  <input type="text" name="birthYear" formControlName="birthYear"> <br>
+  <label>Year of Death</label><br />
+  <input type="text" name="yearofDeath" formControlName="yearofDeath"> <br>
+  <label>Description of dictator</label><br />
+  <input type="text" name="descrip" formControlName="description"> <br>
+  <input type="submit" value="Create" />
+</form>
+<div *ngFor="let dictator of dictators">
+  <p>{{dictator.fName}}</p>
+  <p>{{dictator.lName}}</p>
+  <p>{{dictator.gender}}</p>
+  <p>{{dictator.birthYear}}</p>
+  <p>{{dictator.yearofDeath}}</p>
+  <p>{{dictator.description}}</p>
+  <button (click)="DeleteDictator(dictator)" >Delete Dictator</button>
+</div>
